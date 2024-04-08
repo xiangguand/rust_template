@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-## Format all code directories in the repostitory using cargo fmt.
 
 for DIR in */; do
     DIRNAME=$(basename "$DIR")
     echo "==> $DIRNAME <=="
-    (cd $DIR && cargo test)
+    (cd $DIR && cargo fmt && cargo test)
 done
 
-echo "Format complete."
+echo "===== Formatting and executing the Rust internal test framework complete ====="
